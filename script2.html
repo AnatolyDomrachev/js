@@ -1,0 +1,33 @@
+
+<script language="javascript" type="text/javascript"><!--
+
+var month = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+var d = new Date();
+console.log("now: "+d);
+
+if(d.getDay() != 1)
+	while(d.getDay() != 1)
+		d = new Date(d.getTime() + 24 * 60 * 60 * 1000);
+else
+	if(d.getHours() > 17)
+		d = new Date(d.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+d1 = new Date(d.getTime());
+d2 = new Date(d.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+if(d1.getMonth() == d2.getMonth())
+	message = "с " + d1.getDate() + ' по ' + d2.getDate() + ' ' + month[d.getMonth()] + ", 19:30 по МСК.";
+else
+	message = "с " + d1.getDate()  + ' ' + month[d1.getMonth()] + ' по ' + d2.getDate() + ' ' + month[d2.getMonth()] + ", 19:30 по МСК.";
+
+console.log( message )
+
+window.onload = function(){
+  document.getElementById('event').innerHTML = message;
+};
+
+</script>
+
+ <strong></strong><center><strong><span style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span><span id="event" style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span><span style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span>
+
+
