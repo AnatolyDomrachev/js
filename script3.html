@@ -1,0 +1,33 @@
+
+<script language="javascript" type="text/javascript"><!--
+
+var month = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+var d = new Date();
+console.log("now: "+d);
+var h = d.getHours();
+var m = d.getMinutes();
+var ost = m%10;
+
+if(ost < 5)
+	m = m - 10 - ost;
+else
+	m = m - ost;
+
+var pad;
+if(m < 10)
+	pad = '0';
+else
+	pad = '';
+
+message = "Старт " +  d.getDate() + ' ' + month[d.getMonth()] + " в " + h + '.' + pad + m;
+
+console.log( message )
+
+window.onload = function(){
+  document.getElementById('event').innerHTML = message;
+};
+
+</script>
+
+ <strong></strong><center><strong><span style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span><span id="event" style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span><span style="text-align: center; color: rgb(255, 255, 255); font-size: 22px;"></span>
+
