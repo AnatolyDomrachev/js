@@ -14,7 +14,10 @@ else
 	m = m - ost;
 
 if(m == -10)
-	m = 0;
+{
+	m = 50;
+	h = h-1;
+}
 
 var pad = '';
 if(m < 10)
@@ -22,7 +25,7 @@ if(m < 10)
 else
 	pad = '';
 
-message = "Старт " +  d.getDate() + ' ' + month[d.getMonth()] + " в " + h + '.' + pad + m;
+message = d.getDate() + ' ' + month[d.getMonth()] + " в " + h + '.' + pad + m;
 
 console.log( message )
 
@@ -32,5 +35,6 @@ window.onload = function(){
 
 </script>
 
-<span id="event" style="font-weight: bold; text-align: left; font-size: 22px;"></span>
+<span style="text-align: left; font-size: 22px;">Старт </span>
+	<span id="event" style="font-weight: bold; text-align: left; font-size: 22px;"></span>
 
