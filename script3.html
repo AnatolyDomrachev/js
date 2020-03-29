@@ -13,7 +13,10 @@ if(ost < 5)
 else
 	m = m - ost;
 
-var pad;
+if(m == -10)
+	m = 0;
+
+var pad = '';
 if(m < 10)
 	pad = '0';
 else
